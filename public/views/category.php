@@ -139,8 +139,8 @@ $brands = $brandStmt->fetchAll(PDO::FETCH_COLUMN);
         <aside class="sidebar">
             <h3>Filters</h3>
             <label for="priceRange">Price Range</label>
-            <input id="priceRange" type="range" min="50" max="15000" value="7500">
-            <span id="priceValue">$7500</span>
+            <input id="priceRange" type="range" min="50" max="5000" value="2500">
+            <span id="priceValue">$2500</span>
             <h4>Brand</h4>
             <select id="filter-brand">
                 <option value="all">All Brands</option>
