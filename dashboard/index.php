@@ -9,6 +9,7 @@
   require_once 'controllers/CustomerController.php';
   require_once 'controllers/OrderController.php';
   require_once 'controllers/AdminController.php';
+  require_once 'controllers/ContactController.php';
 
   if (!isset($_SESSION['role']) || ($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'superadmin')) {
       header("Location: /watch_store/public");
@@ -25,7 +26,8 @@
     'discount' => new DiscountController(),
     'customer' => new CustomerController(),
     'order' => new OrderController(),
-    'admin' => new AdminController()
+    'admin' => new AdminController(),
+    'contact' => new ContactController()
   ];
   
   if (array_key_exists($controller, $controllers)) {

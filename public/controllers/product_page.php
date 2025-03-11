@@ -85,6 +85,7 @@ try {
     echo json_encode([
         'success' => true,
         'message' => 'Product added to cart successfully'
+        
     ]);
 } catch (PDOException $e) {
     $pdo->rollBack();
