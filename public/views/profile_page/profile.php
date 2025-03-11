@@ -54,7 +54,12 @@ try {
     <main>
         <div class="profile">
         <div class="profile_img" style="background-color:white;">
-            <img src="/watch_store/public/assets/ProfileImages/<?php echo $user['image']?>" width="100%" alt="">
+            <img src="/watch_store/public/assets/ProfileImages/<?php echo $user['image']?>" width="100%" alt="" style="vertical-align: middle;
+    height: 100%;
+    border-radius: 50%;
+    
+"
+>
         </div>
         <div class="user_name"><h1><?php echo htmlspecialchars($user['name']); ?></h1></div>
         <div>
