@@ -166,6 +166,12 @@
             </div>
           </li>
         <?php endif; ?>
+        <li class="nav-item">
+            <a  href="index.php?controller=contact&action=index">
+            <i class="fas fa-address-book"></i>
+              <p>Contacts</p>
+            </a>
+          </li>
       </ul>
     </div>
   </div>

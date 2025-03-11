@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
         $insertStmt->execute();
     }
     
-    header("Location: " . $_SERVER['PHP_SELF'] . (isset($_GET['categories']) ? "?categories=".$_GET['categories'] : ""));
+    header("Location: " . $_SERVER['PHP_SELF'] . (isset($_GET['categories']) ? "?categories=".$_GET['categories']."&success=1" : "?success=1"));
     exit();
 }
 
@@ -130,6 +130,7 @@ $brands = $brandStmt->fetchAll(PDO::FETCH_COLUMN);
     <link rel="stylesheet" href="../assets/css/category.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Luxury Watches</title>
 </head>
 
@@ -203,6 +204,11 @@ $brands = $brandStmt->fetchAll(PDO::FETCH_COLUMN);
     <?php include './components/footer.html'; ?>
     <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/category.js"></script>
+    <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+    <script>
+        swal("Success!", "Item added to cart successfully!", "success");
+    </script>
+    <?php endif; ?>
 </body>
 
 </html>
